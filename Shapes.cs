@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public abstract class Shape
+public abstract class Shapes
 {
     public abstract double GetArea();
     public abstract double GetPerimeter();
@@ -24,7 +24,7 @@ public abstract class Shape
 
 }
 
-public class Square: Shape
+public class Square: Shapes
 {
 
     public Square(int side)
@@ -54,16 +54,16 @@ public class Square: Shape
         sb.Append(" ");
         sb.Append("with side length " + SideLength);
         sb.Append(", ");
-        sb.Append("area " + GetArea().ToString());
+        sb.Append("area " + GetArea());
         sb.Append(" ");
-        sb.Append("and perimeter length " + GetPerimeter().ToString());
+        sb.Append("and perimeter length " + GetPerimeter());
         sb.Append(".");
 
         return sb.ToString();
     }
 }
 
-public class Rectangle: Shape
+public class Rectangle: Shapes
 {
 
     public int Width { get; set; }
@@ -102,9 +102,9 @@ public class Rectangle: Shape
         sb.Append(" ");
         sb.Append("and width " + Width);
         sb.Append(". ");
-        sb.Append("Area is " + GetArea().ToString());
+        sb.Append("Area is " + GetArea());
         sb.Append(" ");
-        sb.Append("and perimeter is " + GetPerimeter().ToString());
+        sb.Append("and perimeter is " + GetPerimeter());
         sb.Append(".");
 
 
@@ -114,10 +114,7 @@ public class Rectangle: Shape
 
 }
 
-
-
-
-public class Circle : Shape
+public class Circle : Shapes
 {
     private int radius;
 
@@ -147,7 +144,7 @@ public class Circle : Shape
         sb.Append(" ");
         sb.Append("The area is " + GetArea());
         sb.Append(" ");
-        sb.Append("and the perimeter is " + GetPerimeter().ToString());
+        sb.Append("and the perimeter is " + GetPerimeter());
         sb.Append(".");
 
 
